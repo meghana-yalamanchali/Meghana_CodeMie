@@ -159,3 +159,104 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
   
+
+/* ================================================================
+   EPMCDMETST-60027: Inline validation & accessible error messaging
+   LLD s1 - Markup and ARIA wiring
+   ================================================================ */
+
+/* Screen-reader-only utility (HLD accessibility requirement) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Required field asterisk */
+.required-star {
+    color: #c0392b;
+    margin-left: 2px;
+    font-size: 1rem;
+}
+
+/* Form field wrapper - stacks label, input, and error message */
+.form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 6px 8px;
+    width: 100%;
+}
+
+.form-field__label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #353434;
+    margin-bottom: 4px;
+    padding: 0;
+}
+
+/* Inline field error message (LLD s1 - Error text element) */
+.field-error {
+    color: #c0392b;
+    font-size: 0.82rem;
+    font-weight: normal;
+    font-family: sans-serif;
+    margin-top: 4px;
+    padding: 0;
+}
+
+.field-error--hidden {
+    display: none;
+}
+
+/* Invalid input styling (LLD s1 - Input invalid rule, no color-only cues) */
+input[aria-invalid="true"] {
+    border-bottom: 3px solid #c0392b !important;
+    background-color: #fff8f8;
+}
+
+input[aria-invalid="true"]:focus {
+    outline: 2px solid #c0392b;
+    border: 2px solid #c0392b;
+    border-bottom: 3px solid #c0392b !important;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.2);
+}
+
+/* Error summary / live region (LLD s1 - role=alert element) */
+.error-summary {
+    width: calc(100% - 16px);
+    margin: 8px 8px 4px;
+    padding: 10px 14px;
+    background-color: #fdf3f2;
+    border-left: 4px solid #c0392b;
+    border-radius: 4px;
+    color: #7b241c;
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+.error-summary--hidden {
+    display: none;
+}
+
+.error-summary__icon {
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+/* Add-todo form: override the generic .item flex to allow column layout
+   while still inheriting border-bottom from .item rule */
+.add-todo-form {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 0;
+}

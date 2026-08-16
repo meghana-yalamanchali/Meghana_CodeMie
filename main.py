@@ -23,6 +23,32 @@ week_day = week_days[weekday]
 month_name = months[month-1]
 curr_day = f'{day} {month_name} {year}, {week_day}'
 
+
+def validate_todo_form(task_name, due_date):
+    """
+    Validate Add Todo form inputs.
+
+    Returns a dict of field-level error messages (empty dict means valid).
+    Implements validation rules from LLD section 1 (EPMCDMETST-60027):
+      - taskName: required, non-empty after trim
+      - dueDate:  required, must be a parseable YYYY-MM-DD date
+    """
+    errors = {}
+
+    if not task_name or not task_name.strip():
+        errors['taskName'] = 'Task name is required.'
+
+    if not due_date or not due_date.strip():
+        errors['dueDate'] = 'Due date is required.'
+    else:
+        try:
+            datetime.strptime(due_date.strip(), '%Y-%m-%d')
+        except ValueError:
+            errors['dueDate'] = 'Please enter a valid date (YYYY-MM-DD).'
+
+    return errors
+
+
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
     if request.method == "POST":
@@ -65,10 +91,29 @@ def home():
         return redirect("/login")
 
     global year, month, day
+    # Server-side validation errors to pass to the template (LLD §2 – backend interaction)
+    form_errors = {}
+    form_values = {'taskName': '', 'dueDate': ''}
+
     if request.method == 'POST':
         form_data = request.form
-        new_item_content = form_data['newItem']
-        new_item_duedate = form_data['duedate']
+        new_item_content = form_data.get('newItem', '')
+        new_item_duedate = form_data.get('duedate', '')
+
+        # Server-side validation (LLD §1 – validation rules)
+        form_errors = validate_todo_form(new_item_content, new_item_duedate)
+        form_values = {'taskName': new_item_content, 'dueDate': new_item_duedate}
+
+        if form_errors:
+            # Re-render form with errors and preserved values
+            return render_template(
+                'index.html',
+                list_items=items,
+                today=curr_day,
+                leng=len(items),
+                form_errors=form_errors,
+                form_values=form_values,
+            )
 
         date_is = new_item_duedate.split("-")
         due_year = int(date_is[0])
@@ -99,7 +144,15 @@ def home():
                         item['overdue'] = False
 
         return redirect(url_for('home'))
-    return render_template('index.html', list_items=items, today=curr_day, leng=len(items))
+
+    return render_template(
+        'index.html',
+        list_items=items,
+        today=curr_day,
+        leng=len(items),
+        form_errors=form_errors,
+        form_values=form_values,
+    )
 
 
 @app.route('/delete-item', methods=['POST'])

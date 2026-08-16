@@ -9,8 +9,8 @@
 </head>
 <body>
     <div class="box" id="heading">
-        <h1 style = "color: #ffffff">{{ today }}</h1>
-    </div>   
+        <h1 style="color: #ffffff">{{ today }}</h1>
+    </div>
 
     <div class="box">
 
@@ -34,14 +34,223 @@
             {% endfor %}
         {% endif %}
 
+        {# EPMCDMETST-60027: Inline validation and accessible error messaging
+           HLD AddTodoForm UI | LLD s1 Markup and ARIA wiring #}
+        <form
+            id="add-todo-form"
+            class="item add-todo-form"
+            action="/"
+            method="POST"
+            novalidate
+            aria-label="Add a new task"
+        >
+            {# Error Summary / Live Region - LLD s1 role=alert #}
+            <div
+                id="form-error-summary"
+                class="error-summary{% if not form_errors %} error-summary--hidden{% endif %}"
+                role="alert"
+                aria-live="assertive"
+                aria-atomic="true"
+            >
+                {% if form_errors %}
+                    <span class="error-summary__icon" aria-hidden="true">(!)</span>
+                    Please correct the highlighted fields.
+                {% endif %}
+            </div>
 
+            {# Task Name field - LLD s1 ARIA wiring #}
+            <div class="form-field">
+                <label for="newItem" class="form-field__label">
+                    Task name <span aria-hidden="true" class="required-star">*</span>
+                    <span class="sr-only">(required)</span>
+                </label>
+                <input
+                    type="text"
+                    id="newItem"
+                    name="newItem"
+                    autocomplete="off"
+                    placeholder="Add a New Task Here"
+                    value="{{ form_values.taskName if form_values else '' }}"
+                    aria-required="true"
+                    {% if form_errors and form_errors.taskName %}
+                        aria-invalid="true"
+                        aria-describedby="taskName-error"
+                    {% else %}
+                        aria-invalid="false"
+                    {% endif %}
+                >
+                {% if form_errors and form_errors.taskName %}
+                    {# Suggestion fix #2: no role=alert here to avoid double-announcements
+                       with the parent form-error-summary which carries role=alert. #}
+                    <span
+                        id="taskName-error"
+                        class="field-error"
+                    >{{ form_errors.taskName }}</span>
+                {% else %}
+                    <span id="taskName-error" class="field-error field-error--hidden"></span>
+                {% endif %}
+            </div>
 
-        <form class="item " action="/" method="POST">
-            <input type="text" name="newItem" autocomplete="off" placeholder="Add a New Task Here" required>
-            <input type="date" name="duedate" required>
-            <button type="submit" name="submit">+</button>
+            {# Due Date field - LLD s1 ARIA wiring #}
+            <div class="form-field">
+                <label for="duedate" class="form-field__label">
+                    Due date <span aria-hidden="true" class="required-star">*</span>
+                    <span class="sr-only">(required)</span>
+                </label>
+                <input
+                    type="date"
+                    id="duedate"
+                    name="duedate"
+                    value="{{ form_values.dueDate if form_values else '' }}"
+                    aria-required="true"
+                    {% if form_errors and form_errors.dueDate %}
+                        aria-invalid="true"
+                        aria-describedby="dueDate-error"
+                    {% else %}
+                        aria-invalid="false"
+                    {% endif %}
+                >
+                {% if form_errors and form_errors.dueDate %}
+                    {# Suggestion fix #2: no role=alert here (see taskName-error comment). #}
+                    <span
+                        id="dueDate-error"
+                        class="field-error"
+                    >{{ form_errors.dueDate }}</span>
+                {% else %}
+                    <span id="dueDate-error" class="field-error field-error--hidden"></span>
+                {% endif %}
+            </div>
+
+            <button type="submit" name="submit" aria-label="Add task">+</button>
         </form>
     </div>
-<a class="logout" href="{{ url_for('logout') }}">ログアウト</a>
+
+    <a class="logout" href="{{ url_for('logout') }}">&#12525;&#12464;&#12450;&#12454;&#12488;</a>
+
+    <script>
+    /* EPMCDMETST-60027 client-side validation
+       LLD s1: validation rules, ARIA wiring, focus management
+       Mirrors server-side validate_todo_form() in main.py  */
+    (function () {
+        "use strict";
+
+        var form       = document.getElementById("add-todo-form");
+        var taskInput  = document.getElementById("newItem");
+        var dateInput  = document.getElementById("duedate");
+        var taskError  = document.getElementById("taskName-error");
+        var dateError  = document.getElementById("dueDate-error");
+        var summary    = document.getElementById("form-error-summary");
+
+        if (!form) { return; }
+
+        /* Validation rules - LLD s1 Validation rules table */
+        function validateTaskName(value) {
+            if (!value || value.trim().length === 0) {
+                return "Task name is required.";
+            }
+            return "";
+        }
+
+        function validateDueDate(value) {
+            if (!value || value.trim().length === 0) {
+                return "Due date is required.";
+            }
+            var parts = value.split("-");
+            if (parts.length !== 3 || isNaN(Date.parse(value))) {
+                /* Suggestion fix #1: distinct message for malformed vs empty date */
+                return "Please enter a valid date (YYYY-MM-DD).";
+            }
+            return "";
+        }
+
+        /* Show/clear a single field error - LLD s1 ARIA wiring */
+        function showFieldError(input, errorEl, message) {
+            if (message) {
+                input.setAttribute("aria-invalid", "true");
+                input.setAttribute("aria-describedby", errorEl.id);
+                errorEl.textContent = message;
+                errorEl.classList.remove("field-error--hidden");
+            } else {
+                input.setAttribute("aria-invalid", "false");
+                input.removeAttribute("aria-describedby");
+                errorEl.textContent = "";
+                errorEl.classList.add("field-error--hidden");
+            }
+        }
+
+        /* Show/hide error summary live region - LLD s1 role=alert */
+        function updateSummary(hasErrors) {
+            if (hasErrors) {
+                summary.innerHTML =
+                    "<span class=\"error-summary__icon\" aria-hidden=\"true\">(!)</span> " +
+                    "Please correct the highlighted fields.";
+                summary.classList.remove("error-summary--hidden");
+            } else {
+                summary.innerHTML = "";
+                summary.classList.add("error-summary--hidden");
+            }
+        }
+
+        /* Focus first invalid field - LLD s1 Focus management algorithm */
+        function focusFirstError(taskMsg, dateMsg) {
+            if (taskMsg) {
+                requestAnimationFrame(function () { taskInput.focus(); });
+            } else if (dateMsg) {
+                requestAnimationFrame(function () { dateInput.focus(); });
+            }
+        }
+
+        /* Submit handler - LLD s1 Focus management algorithm step 1-3 */
+        form.addEventListener("submit", function (event) {
+            var taskMsg = validateTaskName(taskInput.value);
+            var dateMsg = validateDueDate(dateInput.value);
+
+            showFieldError(taskInput, taskError, taskMsg);
+            showFieldError(dateInput, dateError, dateMsg);
+
+            var hasErrors = !!(taskMsg || dateMsg);
+            updateSummary(hasErrors);
+
+            if (hasErrors) {
+                event.preventDefault();
+                focusFirstError(taskMsg, dateMsg);
+            }
+        });
+
+        /* Clear errors on input/blur - LLD s3 Fixing inputs clears errors */
+        taskInput.addEventListener("input", function () {
+            var msg = validateTaskName(taskInput.value);
+            showFieldError(taskInput, taskError, msg);
+            if (!msg && !validateDueDate(dateInput.value)) {
+                updateSummary(false);
+            }
+        });
+
+        taskInput.addEventListener("blur", function () {
+            showFieldError(taskInput, taskError, validateTaskName(taskInput.value));
+        });
+
+        dateInput.addEventListener("change", function () {
+            var msg = validateDueDate(dateInput.value);
+            showFieldError(dateInput, dateError, msg);
+            if (!msg && !validateTaskName(taskInput.value)) {
+                updateSummary(false);
+            }
+        });
+
+        dateInput.addEventListener("blur", function () {
+            showFieldError(dateInput, dateError, validateDueDate(dateInput.value));
+        });
+
+        /* On page load: focus first invalid field for server-side errors - LLD s2 */
+        (function focusOnServerError() {
+            if (taskInput.getAttribute("aria-invalid") === "true") {
+                requestAnimationFrame(function () { taskInput.focus(); });
+            } else if (dateInput.getAttribute("aria-invalid") === "true") {
+                requestAnimationFrame(function () { dateInput.focus(); });
+            }
+        }());
+    }());
+    </script>
 </body>
 </html>

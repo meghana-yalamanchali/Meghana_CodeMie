@@ -274,6 +274,28 @@
       display: none;
     }
 
+    .form-error-summary {
+      margin: 0 0 14px;
+      border-radius: 12px;
+      background: var(--danger-bg);
+      color: var(--danger);
+      border: 1px solid #f3b4b0;
+      padding: 12px 14px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    .form-error-summary ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-weight: 400;
+    }
+
+    .error-summary--hidden {
+      display: none;
+    }
+
     .field-grid {
       display: grid;
       grid-template-columns: 1.4fr 0.9fr auto;
@@ -475,7 +497,7 @@
           <p>Organize tasks, track deadlines, and stay on top of your day.</p>
         </div>
       </div>
-      <a class="logout-link" href="#" aria-label="Log out of the application">Log out</a>
+      <a class="logout-link" href="{{ url_for('logout') }}" aria-label="Log out of the application">Log out</a>
     </header>
 
     <div class="layout">
@@ -486,62 +508,60 @@
         </div>
 
         <div class="dashboard-list" aria-label="Task list">
-          <form class="task-item-form" action="#" method="post">
-            <div class="task-item">
-              <input class="task-checkbox" type="checkbox" aria-label="Delete task Pay electricity bill" />
-              <div class="task-main">
-                <p class="task-title">Pay electricity bill</p>
-                <p class="task-meta">Due date: 15 August 2026</p>
+          {% if list_items %}
+            {% for item in list_items %}
+            <form class="task-item-form" action="{{ url_for('delete_item') }}" method="post">
+              <input type="hidden" name="checkbox" value="{{ item.id }}" />
+              <div class="task-item">
+                <input
+                  class="task-checkbox"
+                  type="checkbox"
+                  onchange="this.form.submit()"
+                  aria-label="Delete task {{ item.content }}"
+                />
+                <div class="task-main">
+                  <p class="task-title">{{ item.content }}</p>
+                  <p class="task-meta">
+                    Due: {{ item.due_date.day }}/{{ item.due_date.month }}/{{ item.due_date.year }}
+                  </p>
+                </div>
+                <div class="task-status {% if item.get('overdue') %}overdue{% else %}due{% endif %}"
+                     aria-label="Status: {% if item.get('overdue') %}Overdue{% else %}Due{% endif %}">
+                  <span class="icon" aria-hidden="true">{% if item.get('overdue') %}&#9888;{% else %}&#10003;{% endif %}</span>
+                  {% if item.get('overdue') %}Overdue{% else %}Due{% endif %}
+                </div>
               </div>
-              <div class="task-status overdue" aria-label="Status: Overdue">
-                <span class="icon" aria-hidden="true">⚠</span>
-                Overdue
-              </div>
+            </form>
+            {% endfor %}
+          {% else %}
+            <div class="empty-state">
+              <div class="empty-icon" aria-hidden="true">&#128193;</div>
+              <h3>No Task Added Yet</h3>
+              <p>Use the form below to create your first todo and keep track of its due date.</p>
             </div>
-          </form>
-
-          <form class="task-item-form" action="#" method="post">
-            <div class="task-item">
-              <input class="task-checkbox" type="checkbox" aria-label="Delete task Prepare weekly report" />
-              <div class="task-main">
-                <p class="task-title">Prepare weekly report</p>
-                <p class="task-meta">Due date: 16 August 2026</p>
-              </div>
-              <div class="task-status due" aria-label="Status: Due">
-                <span class="icon" aria-hidden="true">✓</span>
-                Due
-              </div>
-            </div>
-          </form>
-
-          <form class="task-item-form" action="#" method="post">
-            <div class="task-item">
-              <input class="task-checkbox" type="checkbox" aria-label="Delete task Grocery shopping" />
-              <div class="task-main">
-                <p class="task-title">Grocery shopping</p>
-                <p class="task-meta">Due date: 18 August 2026</p>
-              </div>
-              <div class="task-status due" aria-label="Status: Due">
-                <span class="icon" aria-hidden="true">✓</span>
-                Due
-              </div>
-            </div>
-          </form>
+          {% endif %}
         </div>
-
-        <div class="empty-state" hidden>
-          <div class="empty-icon" aria-hidden="true">🗂️</div>
-          <h3>No Task Added Yet</h3>
-          <p>Use the form below to create your first todo and keep track of its due date.</p>
-        </div>
-      </section>
 
       <aside class="helper-panel" aria-label="Task details and add form">
         <section class="info-box" aria-labelledby="add-task-title">
           <h3 id="add-task-title">Add Todo</h3>
           <p>Enter a task name and choose a due date. Both fields are required before submission.</p>
 
-          <form id="todo-form" action="#" method="post" novalidate>
+          <form id="todo-form" action="{{ url_for('home') }}" method="post" novalidate>
+            <div class="form-error-summary{% if not form_errors %} error-summary--hidden{% endif %}" data-testid="server-error-summary"
+                 role="alert"
+                 aria-live="assertive"
+                 aria-atomic="true"
+                 aria-label="Form submission errors">
+              {% if form_errors %}
+              <p><strong>Please fix the following errors before submitting:</strong></p>
+              <ul>
+                {% for field, msg in form_errors.items() %}
+                <li>{{ msg }}</li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+            </div>
             <p id="form-errors" class="form-errors" role="status" aria-live="polite" aria-atomic="true"></p>
 
             <div class="field-grid">
@@ -551,15 +571,17 @@
                   id="newItem"
                   name="newItem"
                   type="text"
+                  value="{{ form_values.taskName }}"
                   placeholder="Add a new task here"
                   autocomplete="off"
                   required
                   aria-required="true"
-                  aria-describedby="newItem-error form-errors"
+                  aria-describedby="taskName-error form-errors"
+                  {% if form_errors.taskName %}aria-invalid="true"{% endif %}
                 />
-                <p id="newItem-error" class="field-error" hidden>
+                <p id="taskName-error" class="field-error" {% if not form_errors.taskName %}hidden{% endif %}>
                   <span class="icon" aria-hidden="true">⚠</span>
-                  <span class="error-text">Task name is required.</span>
+                  <span class="error-text">{{ form_errors.taskName if form_errors.taskName else "Task name is required." }}</span>
                 </p>
               </div>
 
@@ -569,13 +591,15 @@
                   id="duedate"
                   name="duedate"
                   type="date"
+                  value="{{ form_values.dueDate }}"
                   required
                   aria-required="true"
-                  aria-describedby="duedate-error form-errors"
+                  aria-describedby="dueDate-error form-errors"
+                  {% if form_errors.dueDate %}aria-invalid="true"{% endif %}
                 />
-                <p id="duedate-error" class="field-error" hidden>
+                <p id="dueDate-error" class="field-error" {% if not form_errors.dueDate %}hidden{% endif %}>
                   <span class="icon" aria-hidden="true">⚠</span>
-                  <span class="error-text">Due date is required.</span>
+                  <span class="error-text">{{ form_errors.dueDate if form_errors.dueDate else "Due date is required." }}</span>
                 </p>
               </div>
 
@@ -604,13 +628,13 @@
       const fields = [
         {
           input: document.getElementById("newItem"),
-          error: document.getElementById("newItem-error"),
+          error: document.getElementById("taskName-error"),
           message: "Task name is required.",
           valid: (value) => value.trim().length > 0
         },
         {
           input: document.getElementById("duedate"),
-          error: document.getElementById("duedate-error"),
+          error: document.getElementById("dueDate-error"),
           message: "Due date is required.",
           valid: (value) => value.trim().length > 0
         }

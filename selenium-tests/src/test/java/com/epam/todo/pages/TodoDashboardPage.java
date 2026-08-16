@@ -14,9 +14,10 @@ public class TodoDashboardPage extends BasePage {
     private static final By SUBMIT_BUTTON        = By.cssSelector(".add-button");
     private static final By TASK_NAME_ERROR      = By.id("taskName-error");
     private static final By TASK_NAME_ERROR_TEXT = By.cssSelector("#taskName-error .error-text");
-    private static final By DUE_DATE_ERROR       = By.id("duedate-error");
-    private static final By DUE_DATE_ERROR_TEXT  = By.cssSelector("#duedate-error .error-text");
+    private static final By DUE_DATE_ERROR       = By.id("dueDate-error");
+    private static final By DUE_DATE_ERROR_TEXT  = By.cssSelector("#dueDate-error .error-text");
     private static final By JS_ERROR_SUMMARY     = By.id("form-errors");
+    private static final By SERVER_ERROR_SUMMARY = By.cssSelector("[data-testid=\"server-error-summary\"]");
     private static final By TASK_TITLES          = By.cssSelector(".task-title");
 
     public TodoDashboardPage(WebDriver driver) { super(driver); }
@@ -133,5 +134,20 @@ public class TodoDashboardPage extends BasePage {
             List<WebElement> titles = driver.findElements(TASK_TITLES);
             return titles.stream().anyMatch(el -> el.getText().contains(taskName));
         } catch (Exception e) { return false; }
+    }
+
+    public String getServerErrorSummaryRole() {
+        try { return driver.findElement(SERVER_ERROR_SUMMARY).getAttribute("role"); }
+        catch (Exception e) { return ""; }
+    }
+
+    public String getServerErrorSummaryAriaLive() {
+        try { return driver.findElement(SERVER_ERROR_SUMMARY).getAttribute("aria-live"); }
+        catch (Exception e) { return ""; }
+    }
+
+    public boolean waitForDueDateErrorVisible() {
+        try { wait.until(ExpectedConditions.visibilityOfElementLocated(DUE_DATE_ERROR)); return true; }
+        catch (Exception e) { return false; }
     }
 }

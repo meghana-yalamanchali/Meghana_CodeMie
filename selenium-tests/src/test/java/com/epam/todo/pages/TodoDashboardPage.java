@@ -24,8 +24,10 @@ public class TodoDashboardPage extends BasePage {
     public void navigate(String baseUrl) { driver.get(baseUrl + "/"); }
 
     public boolean isOnDashboard() {
-        try { return driver.findElement(TODO_FORM).isDisplayed(); }
-        catch (Exception e) { return false; }
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(TODO_FORM));
+            return true;
+        } catch (Exception e) { return false; }
     }
 
     public void clearAndEnterTaskName(String taskName) {

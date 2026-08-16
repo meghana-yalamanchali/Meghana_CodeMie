@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------
+Test set: com.epam.todo.runner.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 23.94 s <<< FAILURE! -- in com.epam.todo.runner.TestRunner
+EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo.SC02 - Submitting with only task name empty shows task name error -- Time elapsed: 2.330 s <<< FAILURE!
+org.junit.ComparisonFailure: 
+[Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+
+EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo.SC05 - Due date error disappears automatically when a date is selected -- Time elapsed: 1.938 s <<< FAILURE!
+org.junit.ComparisonFailure: 
+[Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+
+EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo.SC06 - Form submits successfully when both required fields are provided -- Time elapsed: 2.955 s <<< FAILURE!
+org.junit.ComparisonFailure: 
+[Dashboard should still be visible after successful submission] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.theFormIsSubmittedSuccessfully(InlineValidationSteps.java:184)
+	at ✽.the form is submitted successfully(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:57)
+

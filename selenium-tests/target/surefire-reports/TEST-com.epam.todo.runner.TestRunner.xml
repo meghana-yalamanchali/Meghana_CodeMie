@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.epam.todo.runner.TestRunner" time="23.938" tests="9" errors="0" skipped="0" failures="3">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests\target\test-classes;C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests\target\classes;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-java\4.18.1\selenium-java-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-api\4.18.1\selenium-api-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.18.1\selenium-chrome-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.18.1\selenium-chromium-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-json\4.18.1\selenium-json-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.18.1\selenium-manager-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.18.1\selenium-devtools-v120-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v121\4.18.1\selenium-devtools-v121-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.18.1\selenium-devtools-v122-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.18.1\selenium-devtools-v85-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.18.1\selenium-edge-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.18.1\selenium-firefox-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-http\4.18.1\selenium-http-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.18.1\selenium-ie-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.18.1\selenium-remote-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\guava\33.0.0-jre\guava-33.0.0-jre.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\errorprone\error_prone_annotations\2.23.0\error_prone_annotations-2.23.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.23.1-alpha\opentelemetry-semconv-1.23.1-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-api\1.35.0\opentelemetry-api-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-context\1.35.0\opentelemetry-context-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.35.0\opentelemetry-exporter-logging-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.35.0\opentelemetry-sdk-common-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.35.0\opentelemetry-sdk-extension-autoconfigure-spi-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.35.0\opentelemetry-sdk-extension-autoconfigure-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.35.0-alpha\opentelemetry-api-events-1.35.0-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.35.0\opentelemetry-sdk-trace-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.35.0-alpha\opentelemetry-extension-incubator-1.35.0-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.35.0\opentelemetry-sdk-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.35.0\opentelemetry-sdk-metrics-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.35.0\opentelemetry-sdk-logs-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-os\4.18.1\selenium-os-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.18.1\selenium-safari-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-support\4.18.1\selenium-support-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\net\bytebuddy\byte-buddy\1.14.11\byte-buddy-1.14.11.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Users\MeghanaYalamanchali\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\MeghanaYalamanchali\AppData\Local\Temp\surefire3619732977522883079\surefirebooter-20260816143512972_3.jar C:\Users\MeghanaYalamanchali\AppData\Local\Temp\surefire3619732977522883079 2026-08-16T14-35-12_815-jvmRun1 surefire-20260816143512972_1tmp surefire_0-20260816143512972_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests\target\test-classes;C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests\target\classes;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-java\4.18.1\selenium-java-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-api\4.18.1\selenium-api-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.18.1\selenium-chrome-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.18.1\selenium-chromium-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-json\4.18.1\selenium-json-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.18.1\selenium-manager-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v120\4.18.1\selenium-devtools-v120-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v121\4.18.1\selenium-devtools-v121-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v122\4.18.1\selenium-devtools-v122-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.18.1\selenium-devtools-v85-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.18.1\selenium-edge-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.18.1\selenium-firefox-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-http\4.18.1\selenium-http-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.18.1\selenium-ie-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.18.1\selenium-remote-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\guava\33.0.0-jre\guava-33.0.0-jre.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\checkerframework\checker-qual\3.41.0\checker-qual-3.41.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\errorprone\error_prone_annotations\2.23.0\error_prone_annotations-2.23.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.23.1-alpha\opentelemetry-semconv-1.23.1-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-api\1.35.0\opentelemetry-api-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-context\1.35.0\opentelemetry-context-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.35.0\opentelemetry-exporter-logging-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.35.0\opentelemetry-sdk-common-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.35.0\opentelemetry-sdk-extension-autoconfigure-spi-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.35.0\opentelemetry-sdk-extension-autoconfigure-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.35.0-alpha\opentelemetry-api-events-1.35.0-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.35.0\opentelemetry-sdk-trace-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.35.0-alpha\opentelemetry-extension-incubator-1.35.0-alpha.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.35.0\opentelemetry-sdk-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.35.0\opentelemetry-sdk-metrics-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.35.0\opentelemetry-sdk-logs-1.35.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-os\4.18.1\selenium-os-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.18.1\selenium-safari-driver-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\seleniumhq\selenium\selenium-support\4.18.1\selenium-support-4.18.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\MeghanaYalamanchali\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-java\7.15.0\cucumber-java-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-core\7.15.0\cucumber-core-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-gherkin\7.15.0\cucumber-gherkin-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.15.0\cucumber-gherkin-messages-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\tag-expressions\6.0.0\tag-expressions-6.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-expressions\17.0.1\cucumber-expressions-17.0.1.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\datatable\7.15.0\datatable-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-plugin\7.15.0\cucumber-plugin-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\docstring\7.15.0\docstring-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\ci-environment\10.0.0\ci-environment-10.0.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\io\cucumber\cucumber-junit\7.15.0\cucumber-junit-7.15.0.jar;C:\Users\MeghanaYalamanchali\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\org\assertj\assertj-core\3.25.3\assertj-core-3.25.3.jar;C:\Users\MeghanaYalamanchali\.m2\repository\net\bytebuddy\byte-buddy\1.14.11\byte-buddy-1.14.11.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\MeghanaYalamanchali"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-10-21"/>
+    <property name="java.home" value="C:\Users\MeghanaYalamanchali\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.17.10-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\MeghanaYalamanchali\AppData\Local\Temp\surefire3619732977522883079\surefirebooter-20260816143512972_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.17+10"/>
+    <property name="user.name" value="MeghanaYalamanchali"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="chrome"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.17+10"/>
+    <property name="localRepository" value="C:\Users\MeghanaYalamanchali\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="app.base.url" value="http://localhost:5000"/>
+    <property name="java.io.tmpdir" value="C:\Users\MEGHAN~1\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.17"/>
+    <property name="user.dir" value="C:\Users\MeghanaYalamanchali\codmieProjectCS\Meghana_CodeMie\selenium-tests"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="headless" value="true"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\MeghanaYalamanchali\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\MeghanaYalamanchali\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\MeghanaYalamanchali\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\dotnet;C:\Program Files\nodejs;C:\Users\MeghanaYalamanchali\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.17.10-hotspot\bin;C:\Users\MeghanaYalamanchali\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2025.3.2\bin;C:\Users\MeghanaYalamanchali\AppData\Roaming\npm;C:\users\meghanayalamanchali\.local\bin;C:\users\meghanayalamanchali\appdata\roaming\python\python313\scripts;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Users\MeghanaYalamanchali\.codemie\claude-plugin\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.17+10"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="SC01 - Submitting with both fields empty shows inline error messages" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="3.354">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @smoke @validation
+Scenario: SC01 - Submitting with both fields empty shows inline error messages          # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:16
+  Given I am logged in as a registered user and viewing the todo dashboard              # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  When I submit the Add Todo form with both fields empty                                # com.epam.todo.steps.InlineValidationSteps.iSubmitFormWithBothFieldsEmpty()
+  Then the form is not submitted                                                        # com.epam.todo.steps.InlineValidationSteps.theFormIsNotSubmitted()
+  And an inline error message "Task name is required." is shown for the task name field # com.epam.todo.steps.InlineValidationSteps.inlineErrorMessageIsShownForTaskNameField(java.lang.String)
+  And an inline error message "Due date is required." is shown for the due date field   # com.epam.todo.steps.InlineValidationSteps.inlineErrorMessageIsShownForDueDateField(java.lang.String)
+  And keyboard focus is moved to the first invalid field                                # com.epam.todo.steps.InlineValidationSteps.keyboardFocusIsMovedToFirstInvalidField()
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Aug 16, 2026 2:35:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC02 - Submitting with only task name empty shows task name error" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.33">
+    <failure message="[Should be on the Todo Dashboard after login] &#10;Expecting value to be true but was false expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: 
+[Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+]]></failure>
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @validation
+Scenario: SC02 - Submitting with only task name empty shows task name error             # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:24
+  Given I am logged in as a registered user and viewing the todo dashboard              # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+      org.junit.ComparisonFailure: [Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+
+  When I enter only a due date "2026-12-31" and submit the form                         # com.epam.todo.steps.InlineValidationSteps.iEnterOnlyDueDateAndSubmitForm(java.lang.String)
+  Then the form is not submitted                                                        # com.epam.todo.steps.InlineValidationSteps.theFormIsNotSubmitted()
+  And an inline error message "Task name is required." is shown for the task name field # com.epam.todo.steps.InlineValidationSteps.inlineErrorMessageIsShownForTaskNameField(java.lang.String)
+  And no error message is shown for the due date field                                  # com.epam.todo.steps.InlineValidationSteps.noErrorMessageIsShownForDueDateField()
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC03 - Submitting with only due date empty shows due date error" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.541">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @validation
+Scenario: SC03 - Submitting with only due date empty shows due date error             # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:31
+  Given I am logged in as a registered user and viewing the todo dashboard            # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  When I enter only a task name "Write unit tests" and submit the form                # com.epam.todo.steps.InlineValidationSteps.iEnterOnlyTaskNameAndSubmitForm(java.lang.String)
+  Then the form is not submitted                                                      # com.epam.todo.steps.InlineValidationSteps.theFormIsNotSubmitted()
+  And an inline error message "Due date is required." is shown for the due date field # com.epam.todo.steps.InlineValidationSteps.inlineErrorMessageIsShownForDueDateField(java.lang.String)
+  And no error message is shown for the task name field                               # com.epam.todo.steps.InlineValidationSteps.noErrorMessageIsShownForTaskNameField()
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:20 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC04 - Task name error disappears automatically when valid text is typed" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.532">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @validation @clearing
+Scenario: SC04 - Task name error disappears automatically when valid text is typed # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:42
+  Given I am logged in as a registered user and viewing the todo dashboard         # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  Given inline validation errors are visible on the Add Todo form                  # com.epam.todo.steps.InlineValidationSteps.inlineValidationErrorsAreVisibleOnTheAddTodoForm()
+  When I type "Buy groceries" into the task name field                             # com.epam.todo.steps.InlineValidationSteps.iTypeIntoTaskNameField(java.lang.String)
+  Then the task name error message disappears automatically                        # com.epam.todo.steps.InlineValidationSteps.theTaskNameErrorMessageDisappearsAutomatically()
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:22 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC05 - Due date error disappears automatically when a date is selected" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="1.938">
+    <failure message="[Should be on the Todo Dashboard after login] &#10;Expecting value to be true but was false expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: 
+[Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+]]></failure>
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @validation @clearing
+Scenario: SC05 - Due date error disappears automatically when a date is selected # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:48
+  Given I am logged in as a registered user and viewing the todo dashboard       # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+      org.junit.ComparisonFailure: [Should be on the Todo Dashboard after login] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard(InlineValidationSteps.java:52)
+	at ✽.I am logged in as a registered user and viewing the todo dashboard(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:9)
+
+  Given inline validation errors are visible on the Add Todo form                # com.epam.todo.steps.InlineValidationSteps.inlineValidationErrorsAreVisibleOnTheAddTodoForm()
+  When I select "2026-12-31" as the due date                                     # com.epam.todo.steps.InlineValidationSteps.iSelectAsTheDueDate(java.lang.String)
+  Then the due date error message disappears automatically                       # com.epam.todo.steps.InlineValidationSteps.theDueDateErrorMessageDisappearsAutomatically()
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC06 - Form submits successfully when both required fields are provided" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.955">
+    <failure message="[Dashboard should still be visible after successful submission] &#10;Expecting value to be true but was false expected:&lt;[tru]e&gt; but was:&lt;[fals]e&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: 
+[Dashboard should still be visible after successful submission] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.theFormIsSubmittedSuccessfully(InlineValidationSteps.java:184)
+	at ✽.the form is submitted successfully(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:57)
+]]></failure>
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @validation @happy-path
+Scenario: SC06 - Form submits successfully when both required fields are provided # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:54
+  Given I am logged in as a registered user and viewing the todo dashboard        # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  When I enter task name "Complete test report" and due date "2026-12-31"         # com.epam.todo.steps.InlineValidationSteps.iEnterTaskNameAndDueDate(java.lang.String,java.lang.String)
+  And I click the Add Todo submit button                                          # com.epam.todo.steps.InlineValidationSteps.iClickTheAddTodoSubmitButton()
+  Then the form is submitted successfully                                         # com.epam.todo.steps.InlineValidationSteps.theFormIsSubmittedSuccessfully()
+      org.junit.ComparisonFailure: [Dashboard should still be visible after successful submission] 
+Expecting value to be true but was false expected:<[tru]e> but was:<[fals]e>
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at com.epam.todo.steps.InlineValidationSteps.theFormIsSubmittedSuccessfully(InlineValidationSteps.java:184)
+	at ✽.the form is submitted successfully(file:///C:/Users/MeghanaYalamanchali/codmieProjectCS/Meghana_CodeMie/selenium-tests/src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:57)
+
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:27 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:27 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC07 - Invalid inputs are marked with aria-invalid=&quot;true&quot; on submit" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.631">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @accessibility
+Scenario: SC07 - Invalid inputs are marked with aria-invalid="true" on submit # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:64
+  Given I am logged in as a registered user and viewing the todo dashboard    # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  When I submit the Add Todo form with both fields empty                      # com.epam.todo.steps.InlineValidationSteps.iSubmitFormWithBothFieldsEmpty()
+  Then the task name input has aria-invalid attribute set to "true"           # com.epam.todo.steps.InlineValidationSteps.taskNameInputHasAriaInvalidAttributeSetTo(java.lang.String)
+  And the due date input has aria-invalid attribute set to "true"             # com.epam.todo.steps.InlineValidationSteps.dueDateInputHasAriaInvalidAttributeSetTo(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC08 - Each input is programmatically associated with its error via aria-describedby" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.549">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @accessibility
+Scenario: SC08 - Each input is programmatically associated with its error via aria-describedby # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:70
+  Given I am logged in as a registered user and viewing the todo dashboard                     # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  Then the task name input has aria-describedby referencing id "taskName-error"                # com.epam.todo.steps.InlineValidationSteps.taskNameInputHasAriaDescribedByReferencingId(java.lang.String)
+  And the due date input has aria-describedby referencing id "duedate-error"                   # com.epam.todo.steps.InlineValidationSteps.dueDateInputHasAriaDescribedByReferencingId(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:33 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="SC09 - A live region announces form errors to assistive technology" classname="EPMCDMETST-60027 Registered User: Inline form validation and accessible error messaging for Add Todo" time="2.525">
+    <system-out><![CDATA[
+@EPMCDMETST-60027 @accessibility
+Scenario: SC09 - A live region announces form errors to assistive technology # src/test/resources/features/EPMCDMETST-60027-inline-validation.feature:75
+  Given I am logged in as a registered user and viewing the todo dashboard   # com.epam.todo.steps.InlineValidationSteps.iAmLoggedInAsRegisteredUserAndViewingTheTodoDashboard()
+  When I submit the Add Todo form with both fields empty                     # com.epam.todo.steps.InlineValidationSteps.iSubmitFormWithBothFieldsEmpty()
+  Then the error summary element has an aria-live attribute                  # com.epam.todo.steps.InlineValidationSteps.theErrorSummaryElementHasAnAriaLiveAttribute()
+  And the error summary element announces the validation errors              # com.epam.todo.steps.InlineValidationSteps.theErrorSummaryElementAnnouncesTheValidationErrors()
+  And the error summary element has role "status"                            # com.epam.todo.steps.InlineValidationSteps.theErrorSummaryElementHasRole(java.lang.String)
+]]></system-out>
+    <system-err><![CDATA[Aug 16, 2026 2:35:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 151
+Aug 16, 2026 2:35:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 151.0.7922.138. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+</testsuite>

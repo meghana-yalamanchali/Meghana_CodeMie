@@ -1,0 +1,8 @@
+com\epam\todo\steps\InlineValidationSteps.class
+com\epam\todo\hooks\Hooks.class
+com\epam\todo\pages\LoginPage.class
+com\epam\todo\pages\TodoDashboardPage.class
+com\epam\todo\config\DriverManager.class
+com\epam\todo\runner\TestRunner.class
+com\epam\todo\pages\BasePage.class
+com\epam\todo\pages\SignupPage.class

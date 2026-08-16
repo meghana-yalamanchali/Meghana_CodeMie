@@ -77,6 +77,9 @@ Feature: EPMCDMETST-60218 Registered User: Inline form validation and accessible
     And the due date input has aria-invalid attribute set to "true"
 
   @accessibility
+  # NOTE: dueDate-error uses camelCase D intentionally — this is the stable ID defined in the
+  # design spec (Confluence 2912166181, LLD A11y Implementation Details).
+  # Do NOT normalize to all-lowercase (duedate-error); doing so would break the design contract.
   Scenario: SC08 - Each input is programmatically associated with its error via aria-describedby
     Then the task name input has aria-describedby referencing id "taskName-error"
     And the due date input has aria-describedby referencing id "dueDate-error"

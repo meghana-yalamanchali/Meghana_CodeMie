@@ -17,7 +17,7 @@ public class TodoDashboardPage extends BasePage {
     private static final By DUE_DATE_ERROR       = By.id("dueDate-error");
     private static final By DUE_DATE_ERROR_TEXT  = By.cssSelector("#dueDate-error .error-text");
     private static final By JS_ERROR_SUMMARY     = By.id("form-errors");
-    private static final By SERVER_ERROR_SUMMARY = By.cssSelector(".form-error-summary");
+    private static final By SERVER_ERROR_SUMMARY = By.cssSelector("[data-testid=\"server-error-summary\"]");
     private static final By TASK_TITLES          = By.cssSelector(".task-title");
 
     public TodoDashboardPage(WebDriver driver) { super(driver); }

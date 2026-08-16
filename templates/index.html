@@ -548,7 +548,7 @@
           <p>Enter a task name and choose a due date. Both fields are required before submission.</p>
 
           <form id="todo-form" action="{{ url_for('home') }}" method="post" novalidate>
-            <div class="form-error-summary{% if not form_errors %} error-summary--hidden{% endif %}"
+            <div class="form-error-summary{% if not form_errors %} error-summary--hidden{% endif %}" data-testid="server-error-summary"
                  role="alert"
                  aria-live="assertive"
                  aria-atomic="true"

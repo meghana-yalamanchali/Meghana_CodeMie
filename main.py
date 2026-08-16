@@ -44,7 +44,7 @@ def validate_todo_form(task_name, due_date):
         try:
             datetime.strptime(due_date.strip(), '%Y-%m-%d')
         except ValueError:
-            errors['dueDate'] = 'Due date is required.'
+            errors['dueDate'] = 'Please enter a valid date (YYYY-MM-DD).'
 
     return errors
 
